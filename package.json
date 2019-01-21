@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "vant": "^1.5.4",
-    "vue": "^2.5.21"
+    "vue": "^2.5.21",
+    "vue-lazyload": "^1.2.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",
