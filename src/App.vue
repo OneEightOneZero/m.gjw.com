@@ -8,8 +8,8 @@
 
 <script>
 import Footer from './components/Footer.vue'
-import Banner from './components/Banner.vue'
-import Main from './components/Main.vue'
+import Banner from './components/IndexBanner.vue'
+import Main from './components/IndexMain.vue'
 
 export default {
   name: 'app',
