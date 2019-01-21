@@ -13,7 +13,7 @@
         </van-swipe>
       </div>
     </div>
-    <!-- 类型（统一调到列表页） -->
+    <!-- 类型（统一跳到列表页） -->
     <div class="container">
       <div v-for="(item,idx) in typeImg" :key="idx">
         <a href="#">
@@ -34,12 +34,14 @@
 export default {
   data() {
     return {
+      //头条数据
       toutiao: [
         { link: "#", text: "啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦" },
         { link: "#", text: "啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦" },
         { link: "#", text: "啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦" },
         { link: "#", text: "啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦" }
       ],
+      //类型图片
       typeImg: [
         "http://img0.gjw.com/famous/2018/0713/34c90a46f767478897208adca7681ae4.jpg",
         "http://img0.gjw.com/famous/2018/0713/3f257a2d80cb49e5a1e65340201329f0.jpg",
