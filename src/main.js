@@ -18,6 +18,7 @@ import {
 } from 'vant';
 import './css/index.css'
 
+
 //这个是引入需求的vant组件
 Vue.use(Swipe).use(SwipeItem);
 
