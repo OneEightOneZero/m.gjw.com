@@ -1,8 +1,8 @@
 <template>
     <div>
-        <Dheader />
-        <Dmain />
-        <Dfooter />
+        <Dheader/>
+        <Dmain/>
+        <Dfooter/>
     </div>
 </template>
 <script>
@@ -11,8 +11,9 @@
     import Dheader from '../components/Dheader.vue'
     import Dfooter from '../components/Dfooter.vue'
     import Dmain from '../components/Dmain.vue'
+
     export default {
-        components : {
+        components: {
             Dheader,
             Dfooter,
             Dmain

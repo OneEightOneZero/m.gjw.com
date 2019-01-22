@@ -7,8 +7,8 @@
 </template>
 <script>
     export default {
-        methods : {
-            goback(){
+        methods: {
+            goback() {
                 this.$router.back(-1);
             }
         }
