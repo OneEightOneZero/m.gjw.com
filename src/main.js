@@ -1,5 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
+// 引入ajax库
+import axios from 'axios'
+//把axios挂载到Vue的原型链中
+Vue.prototype.$axios = axios
 //一级路由
 import Details from './pages/Details.vue'
 //二级路由
@@ -16,6 +20,9 @@ import {
     Swipe,
     SwipeItem
 } from 'vant';
+import { Tab, Tabs } from 'vant';
+
+Vue.use(Tab).use(Tabs);
 import './css/index.css'
 
 

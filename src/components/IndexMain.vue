@@ -41,7 +41,7 @@
         </div>
       </div>
     </div>
-    <!-- 商品 (数据待获取)-->
+    <!-- 秒杀商品 (数据待获取)-->
     <div class="secods_good">
       <div
         class="swiper-container swiper-container-horizontal swiper-container-free-mode swiper-container-ios"
@@ -116,8 +116,8 @@
       </div>
     </div>
     <!-- 促销 -->
-    <div class="van-row" style="margin-left: -5px; margin-right: -5px;">
-      <div class="van-col van-col--12" style="padding-left: 5px; padding-right: 5px;">
+    <div class="van-row" >
+      <div class="van-col van-col--12" >
         <a href="#">
           <img src="http://img0.gjw.com/famous/2019/0121/721e0fb2621e49beb0c1c97065a43acf.jpg" alt>
         </a>
@@ -193,6 +193,7 @@
         </a>
       </div>
     </div>
+    
   </div>
 </template>
 <script>
@@ -202,6 +203,8 @@ import "swiper/dist/css/swiper.min.css";
 export default {
   data() {
     return {
+      
+      
       //头条数据
       toutiao: [
         { link: "#", text: "啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦" },
@@ -221,12 +224,24 @@ export default {
         "http://img0.gjw.com/famous/2018/0713/c7ee25ce88144ebe9f1c743c64df2000.jpg",
         "http://img0.gjw.com/famous/2018/0801/8fccd4a2c00947869641bd32c0a4c42f.jpg",
         "http://img0.gjw.com/famous/2018/0801/a4b34eda8bc24782994a4d86cd2528ce.jpg"
-      ]
+      ],
+      
     };
   },
+  methods: {
+    
+  },
+
   mounted() {
     /* eslint-disable no-new */
     new Swiper(".swiper-container", {});
+    
   }
 };
 </script>
+<style scoped>
+.home_class{
+  margin-bottom: 0px;
+}
+</style>
+
