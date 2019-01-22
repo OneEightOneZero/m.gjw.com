@@ -4,7 +4,7 @@
     id="footer"
     style="z-index: 999;"
   >
-    <div class="van-tabbar-item active" @click="toIndex">
+    <div class="van-tabbar-item" @click="toIndex">
       <div class="van-tabbar-item__icon">
         <img src="../assets/home.png">
         <!---->
@@ -53,6 +53,11 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      active:0
+    }
+  },
   methods: {
     toIndex() {
       // 根据命名路由来进行跳转

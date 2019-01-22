@@ -24,7 +24,7 @@ export default {
   methods: {
     //   获取分类信息
     async getClassify() {
-      let data = await this.$axios.get("http://localhost:3000/Classify");
+      let data = await this.$axios.get("http://39.105.167.17:3000/Classify");
       this.List = this.List.concat(data.data.data.item_data);
         // console.log(this.List);
       return data;

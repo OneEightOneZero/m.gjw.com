@@ -101,7 +101,7 @@ export default {
   methods: {
     //   获取首页商品信息
     async getIndexWine() {
-      let data = await this.$axios.get("http://localhost:3000/Indexwine", {
+      let data = await this.$axios.get("http://39.105.167.17:3000/Indexwine", {
         params: {
           idx: this.idx
         }
