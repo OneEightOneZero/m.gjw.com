@@ -321,18 +321,18 @@
                 pj: 5,
                 pjList: [],
                 // 详情页tab切换
-                xqTab: [
+                xqTab:[
                     {
-                        title: '商品介绍'
+                        title : '商品介绍'
                     },
                     {
-                        title: '规格参数'
+                        title : '规格参数'
                     },
                     {
-                        title: '包装售后'
+                        title : '包装售后'
                     }
                 ],
-                xqCur: 0
+                xqCur : 0
             }
         },
         watch: {
@@ -424,11 +424,11 @@
             },
             // 拿评价
             async getPj() {
-                let data = await this.$axios.get('http://39.105.167.17:3000/users/pj');
+                let data = await this.$axios.get('http://localhost:3000/users/pj')
                 this.pjList = data.data.data;
             },
             //详情页tab切换
-            xqIdx(index) {
+            xqIdx(index){
                 this.xqCur = index;
             }
         },
@@ -446,4 +446,13 @@
         width: 100%;
         height: 100%;
     }
+
+    /*.van-cell:not(:last-child)::after {*/
+    /*left: 15px;*/
+    /*right: 0;*/
+    /*width: auto;*/
+    /*-webkit-transform: scale(1, .5);*/
+    /*transform: scale(1, .5);*/
+    /*border-bottom-width: 1px;*/
+    /*}*/
 </style>

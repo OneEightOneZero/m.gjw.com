@@ -34,9 +34,9 @@
           <div class="van-cell__title">
             <b>掌上秒杀</b>
             <span class="fz">距结束</span>
-            <i>13</i>:
-            <i>36</i>:
-            <i>32</i>
+            <i v-text="hours">13</i>:
+            <i v-text="minutes">36</i>:
+            <i v-text="seconds">32</i>
           </div>
         </div>
       </div>
@@ -116,8 +116,8 @@
       </div>
     </div>
     <!-- 促销 -->
-    <div class="van-row" >
-      <div class="van-col van-col--12" >
+    <div class="van-row">
+      <div class="van-col van-col--12">
         <a href="#">
           <img src="http://img0.gjw.com/famous/2019/0121/721e0fb2621e49beb0c1c97065a43acf.jpg" alt>
         </a>
@@ -193,7 +193,6 @@
         </a>
       </div>
     </div>
-    
   </div>
 </template>
 <script>
@@ -203,14 +202,12 @@ import "swiper/dist/css/swiper.min.css";
 export default {
   data() {
     return {
-      
-      
       //头条数据
       toutiao: [
-        { link: "#", text: "啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦" },
-        { link: "#", text: "啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦" },
-        { link: "#", text: "啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦" },
-        { link: "#", text: "啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦" }
+        { link: "#", text: "太白吉祥如意清仓仅需39元" },
+        { link: "#", text: "太白吉祥如意清仓仅需399元" },
+        { link: "#", text: "太白吉祥如意清仓仅需3999元" },
+        { link: "#", text: "太白吉祥如意清仓仅需39999元" }
       ],
       //类型图片
       typeImg: [
@@ -225,22 +222,47 @@ export default {
         "http://img0.gjw.com/famous/2018/0801/8fccd4a2c00947869641bd32c0a4c42f.jpg",
         "http://img0.gjw.com/famous/2018/0801/a4b34eda8bc24782994a4d86cd2528ce.jpg"
       ],
-      
+      //倒计时事件
+      hours: 16,
+      minutes: 30,
+      seconds: 50,
+      itemNum: 1
     };
   },
   methods: {
-    
+    //倒计时
+    num: function(n) {
+      return n < 10 ? "0" + n : "" + n;
+    },
+    countdown: function() {
+      var _this = this;
+      var time = window.setInterval(function() {
+        if (_this.seconds == 0 && _this.minutes == 0 && _this.hours != 0) {
+          _this.seconds = 59;
+          _this.minutes = 59;
+          _this.hours -= 1;
+        } else if (_this.seconds == 0 && _this.minutes != 0) {
+          _this.seconds = 59;
+          _this.minutes -= 1;
+        } else if (_this.minutes == 0 && _this.seconds == 0) {
+          _this.seconds = 0;
+          window.clearInterval(time);
+        } else {
+          _this.seconds -= 1;
+        }
+      }, 1000);
+    }
   },
 
   mounted() {
     /* eslint-disable no-new */
     new Swiper(".swiper-container", {});
-    
+    this.countdown();
   }
 };
 </script>
 <style scoped>
-.home_class{
+.home_class {
   margin-bottom: 0px;
 }
 </style>
