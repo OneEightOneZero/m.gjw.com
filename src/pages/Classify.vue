@@ -26,7 +26,7 @@ export default {
     async getClassify() {
       let data = await this.$axios.get("http://localhost:3000/Classify");
       this.List = this.List.concat(data.data.data.item_data);
-        console.log(this.List);
+        // console.log(this.List);
       return data;
     },
   },
