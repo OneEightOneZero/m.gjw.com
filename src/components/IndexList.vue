@@ -12,7 +12,7 @@
               <div class="van-row" style="margin-left: -5px; margin-right: -5px;">
                 <div
                   class="van-col van-col--12"
-                  style="padding-left: 5px; padding-right: 5px; margin-top: 30px!important;"
+                  style="padding-left: 5px; padding-right: 5px; margin-top: 50px!important;"
                   v-for="(item,idx) in wine"
                   :key="idx"
                   :id="item.ProductId"
@@ -25,14 +25,14 @@
                         <span style="background-color: rgb(197, 140, 255);">满额立减</span>
                         <!---->
                       </div>
-                      <div class="red" v-text="item.ActivityMoney">￥768</div>
+                      <div class="red" v-html="'<span>￥</span>'+item.ActivityMoney"></div>
                     </a>
                   </div>
                 </div>
               </div>
               <!-- 加载 -->
               <div class="van-list__loading" v-show="isLoading">
-                <div class="van-loading van-loading--circular van-loading--black">
+                <div class="van-loading van-loading--circular van-loading--black" style="width:100%">
                   <span class="van-loading__spinner van-loading__spinner--circular">
                     <svg viewBox="25 25 50 50" class="van-loading__circular">
                       <circle cx="50" cy="50" r="20" fill="none"></circle>

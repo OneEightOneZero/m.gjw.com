@@ -6,7 +6,7 @@
   >
     <div class="van-tabbar-item" @click="toIndex">
       <div class="van-tabbar-item__icon">
-        <img src="../assets/home.png">
+        <img src="../assets/home_clear.png">
         <!---->
       </div>
       <div class="van-tabbar-item__text">
