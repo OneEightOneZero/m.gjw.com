@@ -6,6 +6,8 @@ import axios from 'axios'
 Vue.prototype.$axios = axios
 //一级路由
 import Details from './pages/Details.vue'
+import Account from './pages/Account.vue'
+
 //二级路由
 import Index from './pages/Index.vue'
 import Classify from './pages/Classify.vue'
@@ -71,6 +73,10 @@ const routes = [
     {
         path: '/details',
         component: Details
+    },
+    {
+        path: '/Account',
+        component: Account
     }
 ];
 //创建一个VueRouter的实例
