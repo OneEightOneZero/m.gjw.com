@@ -1,14 +1,13 @@
 <template>
     <div class="user mb50">
         <div class="usr_top login ">
-            <div class="no_login"><img src="../assets/icon_head_no_login.png" alt=""> <a href="/login.html">登录/注册
-                &gt;</a></div>
-            <div class="login_box hide">
-                <div class="user_img"><a href="/usercenter/UserinfoEdit.html"><img
-                        src="http://img0.gjw.com/Face/2018/0809/cd321898905a4cb6816502f08b114611.jpg" alt=""></a></div>
-                <div class="user_info"><p><img height="18" src="../assets/mine_message_p.png" alt=""></p>
-                    <p>游客</p>
-                    <p>普通会员</p></div>
+            <div class="no_login" v-show="!hasToken"><img src="../assets/icon_head_no_login.png" alt="">
+                <a href="javascript:void(0);" @click="toLogin">登录/注册
+                    &gt;</a>
+            </div>
+            <div class="no_login" v-show="hasToken"><img src="../assets/icon_head_no_login.png" alt="">
+                <a href="javascript:void(0);" v-text="token"></a>
+                <span class="exit" @click="exit">退出</span>
             </div>
         </div>
         <div class="my_order">
@@ -181,20 +180,45 @@
     // import MineHeader from '../components/MineHeader.vue'
     export default {
         data() {
-            return {}
+            return {
+                token: "",
+                hasToken: false
+            }
         },
         components: {},
-        methods: {},
+        methods: {
+            toLogin() {
+                this.$router.push({name: "Login"});
+            },
+            exit(){
+                localStorage.removeItem("gjw");
+                this.$router.push({name: "Login"});
+            }
+        },
+        created() {
+            let token = localStorage.getItem("gjw");
+            if (token) {
+                this.token = token;
+                this.hasToken = true;
+            }
+        },
         mounted() {
             new Swiper('.swiper-container', {
                 loop: true,
-                autoplay : 1000,
+                autoplay: 1000,
             })
         }
     };
 </script>
 <style scoped>
-    .swiper-slide{
-        width:140px !important;
+    .swiper-slide {
+        width: 140px !important;
+    }
+    .exit{
+        position:absolute;
+        right:20px;
+        top:0;
+        z-index:9999;
+        color:#fff;
     }
 </style>
