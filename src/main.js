@@ -2,11 +2,16 @@ import Vue from 'vue'
 import App from './App.vue'
 // 引入ajax库
 import axios from 'axios'
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+import qs from "qs";//配合qs模块转化post请求的参数
 //把axios挂载到Vue的原型链中
 Vue.prototype.$axios = axios;
+Vue.prototype.$qs = qs;
 //一级路由
 import Details from './pages/Details.vue'
 import Account from './pages/Account.vue'
+import Login from './pages/Login'
+import Reg from './pages/Reg.vue'
 
 //二级路由
 import Index from './pages/Index.vue'
@@ -77,6 +82,17 @@ const routes = [
     {
         path: '/Account',
         component: Account
+    },
+    // 注册页面
+    {
+        path : '/login',
+        name: 'Login',
+        component : Login
+    },
+    {
+        path : '/register',
+        name: 'Reg',
+        component : Reg
     }
 ];
 //创建一个VueRouter的实例
