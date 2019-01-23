@@ -14,7 +14,8 @@
 							<input
 								type="search"
 								placeholder="请输入商品名称"
-								class="van-field__control"
+								class="van-field__control"    style="text-indent: 22px;" 
+
 							/><!----><!----><!---->
 						</div>
 						<!---->
@@ -67,7 +68,7 @@
 			<div class="van-row">
 				<div v-for="(m, index) in news" :key="index" class="van-col van-col--12">
 					<div class="pro_item">
-						<a href="#">
+						<a href="#" @click="getrouter(index)">
 							<img :src="'http://img0.gjw.com/product/'+m.Pic" alt="" class="pic" />
 							<p class="tit2" v-text="m.ProductName"></p>
 							<div class="tag"></div>
@@ -118,6 +119,16 @@ export default {
 		};
 	},
 	methods: {
+		getrouter(index){
+			// console.log(index)
+			this.$router.push({
+				 name: 'Details',
+				  params: {
+                       id:index+1
+                    }				 
+			})
+		},
+		
 		getlist() {
 			setTimeout(async () => {
 				let datalist = await this.$axios.get('http://localhost:3000/news');
@@ -210,5 +221,11 @@ function sortKey2(array,key){
 }
 
 
+.pro_nav .van-row > div {
+    border-right: solid 1px #e9e9e9;
+    line-height: 30px;
+    position: relative;
+    background: #fff;
+}
 
 </style>

@@ -93,11 +93,14 @@ const routes = [
     },
     {
         path: '/details',
-        component: Details
+        component: Details,
+		name: 'Details'
     },
     {
         path: '/list',
         component: List
+		
+		
     },
 ];
 //创建一个VueRouter的实例
