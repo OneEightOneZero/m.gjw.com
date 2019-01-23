@@ -26,7 +26,6 @@ Vue.use(PullRefresh)
 
 
 //引入Vant 为了不让他报错我改下下面的写法1564523
-=======
 //二级路由
 import Index from './pages/Index.vue'
 import Classify from './pages/Classify.vue'
@@ -34,7 +33,6 @@ import Mine from './pages/Mine.vue'
 import Cart from './pages/Cart.vue'
 
 //引入vant 为了不让他报错我改下下面的写法
->>>>>>> 5e41820e0971783ac3f7a714d22675ba574a6ce7
 // import Vant from 'vant';
 import 'vant'
 import 'vant/lib/index.css';
