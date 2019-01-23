@@ -138,7 +138,7 @@ export default {
 
     getlist() {
       setTimeout(async () => {
-        let datalist = await this.$axios.get("http://localhost:3000/news");
+        let datalist = await this.$axios.get("http://39.105.167.17:3000/List");
         // console.log(datalist.data.data)
         this.news = this.news.concat(datalist.data.data);
         // console.log(this.news);
