@@ -92,9 +92,9 @@ const routes = [
 
     },
     {
-        path: '/details',
-        component: Details,
-		name: 'Details'
+        path: '/details/:id',
+        name:'Details',
+        component: Details
     },
     {
         path: '/list',

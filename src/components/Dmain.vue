@@ -424,7 +424,7 @@
             },
             // 拿评价
             async getPj() {
-                let data = await this.$axios.get('http://localhost:3000/users/pj')
+                let data = await this.$axios.get('http://39.105.167.17:3000/users/pj')
                 this.pjList = data.data.data;
             },
             //详情页tab切换
