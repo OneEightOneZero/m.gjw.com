@@ -121,7 +121,7 @@ export default {
     };
   },
   methods: {
-    tiIndex(){
+    toIndex(){
       this.$router.push({
         name: "Index",
       });
