@@ -2,9 +2,9 @@
 	<div>
 		<!-- 搜索 -->
 		<div class="van-nav-bar search-top" style="position: fixed;z-index: 88; top: 0px; width: 100%;">
-			<div class="back">
+			<router-link to="/App/Index" class="back">
 				<i class="van-icon van-icon-arrow-left"><!----></i>
-			</div>
+			</router-link>
 			<div class="van-search van-search--show-action" style="background: transparent;">
 				<i class="van-icon van-icon-search"><!----></i>
 				<div class="van-cell van-field">
