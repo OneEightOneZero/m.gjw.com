@@ -1,89 +1,4 @@
 <template>
-<<<<<<< HEAD
-	<div>
-		<!-- 搜索 -->
-		<div class="van-nav-bar search-top" style="position: fixed;z-index: 88; top: 0px; width: 100%;">
-			<router-link to="/App/Index" class="back">
-				<i class="van-icon van-icon-arrow-left"><!----></i>
-			</router-link>
-			<div class="van-search van-search--show-action" style="background: transparent;">
-				<i class="van-icon van-icon-search"><!----></i>
-				<div class="van-cell van-field">
-					<!----><!---->
-					<div class="van-cell__value van-cell__value--alone">
-						<div class="van-field__body">
-							<input
-								type="search"
-								placeholder="请输入商品名称"
-								class="van-field__control"    style="text-indent: 22px;" 
-
-							/><!----><!----><!---->
-						</div>
-						<!---->
-					</div>
-					<!---->
-				</div>
-				<div class="van-search__action"><div>搜索</div></div>
-			</div>
-		</div>
-
-		<!-- 导航 -->
-		<div
-			class="pro_nav"
-			style="position: fixed; top: 45px; z-index: 88; width: 100%;"
-		>
-			<div class="van-row" style="padding: 0px;">
-				<div
-					v-for="(goods, index) in goodslist"
-					:key="index"
-					class="van-col van-col--8 "
-					
-				>
-					<span v-text="goods.title" @click="getactive(goods,index)"
-					:class="{ active: active == index }" ></span>
-					
-				<div v-show="show1">
-				  <div v-for="(mms,index) in goods.mm" :key="index" id="menu1">
-					  <p v-text="mms.evaluate" @click="shopping"></p>
-					  <p v-text="mms.product"></p>
-				  </div>
-				</div>
-				
-				<div v-show="show2">
-				  <div v-for="(mms,index) in goods.mm" :key="index" id="menu2">
-					  <p v-text="mms.lowprice" @click="numlow"></p>
-					  <p v-text="mms.highprice" @click="numlow2"></p>
-				  </div>
-				</div>
-			
-					
-				</div>
-
-			</div>
-			
-		</div>
-
-		<!-- 列表 -->
-
-		<van-pull-refresh v-model="isLoading" @refresh="getlist" class="pro_list bg van-list">
-			<div class="van-row">
-				<div v-for="(m, index) in news" :key="index" class="van-col van-col--12">
-					<div class="pro_item">
-						<a href="#" @click="getrouter(index)">
-							<img :src="'http://img0.gjw.com/product/'+m.Pic" alt="" class="pic" />
-							<p class="tit2" v-text="m.ProductName"></p>
-							<div class="tag"></div>
-							<div class="price" v-text="m.APPPrice"></div>
-							<div class="tip" v-text="`${m.SumComment}好评`">
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 97%好评
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</van-pull-refresh>
-	</div>
-=======
   <div>
     <!-- 搜索 -->
     <div class="van-nav-bar search-top" style="position: fixed;z-index: 88; top: 0px; width: 100%;">
@@ -165,7 +80,6 @@
       </div>
     </van-pull-refresh>
   </div>
->>>>>>> 3594bf08817069b20608d88ee07642c2c32ef62d
 </template>
 
 <script>
