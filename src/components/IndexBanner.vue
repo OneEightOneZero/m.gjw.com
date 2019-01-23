@@ -3,7 +3,12 @@
     <div class="search_bg hide"></div>
     <div class="search_box">
       <i class="van-icon van-icon-search" style="color: rgb(204, 204, 204);">
-        <input type="text" placeholder="请输入商品名称">
+        <input
+          type="text"
+          placeholder="请输入商品名称"
+          @blur.prevent="search(searchText)"
+          v-model="searchText"
+        >
         <!---->
       </i>
     </div>
@@ -21,6 +26,7 @@
 export default {
   data() {
     return {
+      searchText: "",
       bannerImg: [
         {
           link: "#",
@@ -42,14 +48,18 @@ export default {
           img:
             "http://img0.gjw.com/famous/2019/0119/5343e92e8dc94ff6818513756bbb9509.jpg"
         }
-      ],
-      
+      ]
     };
+  },
+  methods: {
+    search(text) {
+      this.$router.push({ name: "list", params: { searchText: text } });
+    }
   }
 };
 </script>
 <style scoped>
-input{
+input {
   line-height: 18px;
   margin-left: 10px;
   font-size: 14px;

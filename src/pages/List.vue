@@ -21,6 +21,7 @@
                 placeholder="请输入商品名称"
                 class="van-field__control"
                 style="text-indent: 22px;"
+                v-model="SearchText"
               >
               <!---->
               <!---->
@@ -86,6 +87,7 @@
 export default {
   data() {
     return {
+      SearchText:"",
       show1: false,
       show2: false,
       news: [],
@@ -121,6 +123,9 @@ export default {
     };
   },
   methods: {
+    getSearchText(){
+      this.SearchText = this.$route.params.searchText
+    },
     toIndex(){
       this.$router.push({
         name: "Index",
@@ -178,6 +183,7 @@ export default {
   },
 
   created() {
+    this.getSearchText()
     this.getlist();
   }
 };

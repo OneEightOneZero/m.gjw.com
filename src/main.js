@@ -107,7 +107,8 @@ const routes = [
         name: 'Reg',
         component : Reg
     },{
-        path: '/list',
+        path: '/list/:searchText',
+        name : 'list',
         component: List
 
 
