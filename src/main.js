@@ -103,7 +103,7 @@ const routes = [
 		
     },
 ];
-//创建一个VueRouter的实例
+//创建一个VueRouter的实例.
 let router = new VueRouter({
     routes
 });
