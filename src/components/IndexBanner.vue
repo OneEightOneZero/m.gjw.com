@@ -3,7 +3,7 @@
     <div class="search_bg hide"></div>
     <div class="search_box">
       <i class="van-icon van-icon-search" style="color: rgb(204, 204, 204);">
-        <span>请输入商品名称</span>
+        <input type="text" placeholder="请输入商品名称">
         <!---->
       </i>
     </div>
@@ -49,5 +49,11 @@ export default {
 };
 </script>
 <style scoped>
+input{
+  line-height: 18px;
+  margin-left: 10px;
+  font-size: 14px;
+  border: none;
+}
 </style>
 
