@@ -6,20 +6,19 @@ import axios from 'axios'
 Vue.prototype.$axios = axios;
 //一级路由
 import Details from './pages/Details.vue'
-import Account from './pages/Account.vue'
 
-<<<<<<< HEAD
+
 
 //列表页
 import List from './pages/List.vue'
-//引进axios
-import axios from "axios"
-Vue.prototype.$axios=axios;
+Vue.prototype.$axios = axios;
 //引进jq
 import $ from "jquery"
-Vue.prototype.$=$;
+Vue.prototype.$ = $;
 //下拉刷新
-import { PullRefresh } from 'vant';
+import {
+    PullRefresh
+} from 'vant';
 
 Vue.use(PullRefresh)
 
@@ -40,7 +39,10 @@ import {
     Swipe,
     SwipeItem
 } from 'vant';
-import { Tab, Tabs } from 'vant';
+import {
+    Tab,
+    Tabs
+} from 'vant';
 
 Vue.use(Tab).use(Tabs);
 import './css/index.css'
@@ -57,11 +59,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 //注册路由
 const routes = [
-<<<<<<< HEAD
-    {path : '/',component:App},
-    {path : '/details',component:Details},
-	{path : '/list',component:List}
-=======
+
     {
         //域名重定向
         path: '/',
@@ -78,15 +76,15 @@ const routes = [
             path: 'Index',
             name: 'Index',
             component: Index
-        },{
+        }, {
             path: 'Classify',
             name: 'Classify',
             component: Classify
-        },{
+        }, {
             path: 'Mine',
             name: 'Mine',
             component: Mine
-        },{
+        }, {
             path: 'Cart',
             name: 'Cart',
             component: Cart
@@ -98,10 +96,9 @@ const routes = [
         component: Details
     },
     {
-        path: '/Account',
-        component: Account
-    }
->>>>>>> 5e41820e0971783ac3f7a714d22675ba574a6ce7
+        path: '/list',
+        component: List
+    },
 ];
 //创建一个VueRouter的实例
 let router = new VueRouter({
