@@ -9,7 +9,6 @@ Vue.prototype.$axios = axios;
 Vue.prototype.$qs = qs;
 //一级路由
 import Details from './pages/Details.vue'
-import Account from './pages/Account.vue'
 import Login from './pages/Login'
 import Reg from './pages/Reg.vue'
 
@@ -97,10 +96,7 @@ const routes = [
         name:'Details',
         component: Details
     },
-    {
-        path: '/Account',
-        component: Account
-    },
+
     // 注册页面
     {
         path : '/login',
