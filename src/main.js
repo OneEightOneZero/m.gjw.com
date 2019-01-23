@@ -3,10 +3,12 @@ import App from './App.vue'
 // 引入ajax库
 import axios from 'axios'
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-import qs from "qs";//配合qs模块转化post请求的参数
+import qs from "qs"; //配合qs模块转化post请求的参数
 //把axios挂载到Vue的原型链中
 Vue.prototype.$axios = axios;
 Vue.prototype.$qs = qs;
+// 引入仓库
+import store from './lib/store.js'
 //一级路由
 import Details from './pages/Details.vue'
 import Login from './pages/Login'
@@ -59,8 +61,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter);
 //注册路由
-const routes = [
-    {
+const routes = [{
         //域名重定向
         path: '/',
         redirect: {
@@ -76,15 +77,15 @@ const routes = [
             path: 'Index',
             name: 'Index',
             component: Index
-        },{
+        }, {
             path: 'Classify',
             name: 'Classify',
             component: Classify
-        },{
+        }, {
             path: 'Mine',
             name: 'Mine',
             component: Mine
-        },{
+        }, {
             path: 'Cart',
             name: 'Cart',
             component: Cart
@@ -93,23 +94,23 @@ const routes = [
     },
     {
         path: '/details/:id',
-        name:'Details',
+        name: 'Details',
         component: Details
     },
 
     // 注册页面
     {
-        path : '/login',
+        path: '/login',
         name: 'Login',
-        component : Login
+        component: Login
     },
     {
-        path : '/register',
+        path: '/register',
         name: 'Reg',
-        component : Reg
-    },{
+        component: Reg
+    }, {
         path: '/list/:searchText',
-        name : 'list',
+        name: 'list',
         component: List
 
 
@@ -124,5 +125,7 @@ Vue.config.productionTip = false;
 
 new Vue({
     render: h => h('router-view'),
-    router
+    router,
+    // 挂载仓库
+    store,
 }).$mount('#app');

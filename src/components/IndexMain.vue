@@ -232,7 +232,7 @@ export default {
   methods: {
     //跳转列表页
     toList(){
-      this.$router.push({path: '/list'})
+      this.$router.push({name:"list"})
     },
     //倒计时
     num: function(n) {
