@@ -15,8 +15,8 @@
     </div>
     <!-- 类型（统一跳到列表页） -->
     <div class="container">
-      <div v-for="(item,idx) in typeImg" :key="idx">
-        <a href="#">
+      <div v-for="(item,idx) in typeImg" :key="idx" @click="toList">
+        <a href="#" >
           <div class="row_col_img van-col">
             <div class="van-row" :id="idx">
               <img :src="item" class="home_van_cat_image">
@@ -230,6 +230,10 @@ export default {
     };
   },
   methods: {
+    //跳转列表页
+    toList(){
+      this.$router.push({path: '/list'})
+    },
     //倒计时
     num: function(n) {
       return n < 10 ? "0" + n : "" + n;

@@ -1,6 +1,6 @@
 <template>
   <div class="list_home">
-    <div class="box" v-for="(item,idx) in List" :key="idx">
+    <div class="box" v-for="(item,idx) in List" :key="idx" @click="toList">
       <div class="title" v-text="item.TypeName">
         葡萄酒
         <a href="#" class="more">查看全部 &gt;</a>
@@ -22,6 +22,10 @@ export default {
     }
   },
   methods: {
+    //跳转列表页
+    toList(){
+      this.$router.push({path: '/list'})
+    },
     //   获取分类信息
     async getClassify() {
       let data = await this.$axios.get("http://39.105.167.17:3000/Classify");

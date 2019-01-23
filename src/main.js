@@ -13,6 +13,20 @@ import Account from './pages/Account.vue'
 import Login from './pages/Login'
 import Reg from './pages/Reg.vue'
 
+
+
+//列表页
+import List from './pages/List.vue'
+//引进jq
+import $ from "jquery"
+Vue.prototype.$ = $;
+//下拉刷新
+import {
+    PullRefresh
+} from 'vant';
+
+Vue.use(PullRefresh);
+
 //二级路由
 import Index from './pages/Index.vue'
 import Classify from './pages/Classify.vue'
@@ -27,7 +41,10 @@ import {
     Swipe,
     SwipeItem
 } from 'vant';
-import { Tab, Tabs } from 'vant';
+import {
+    Tab,
+    Tabs
+} from 'vant';
 
 Vue.use(Tab).use(Tabs);
 import './css/index.css'
@@ -76,7 +93,8 @@ const routes = [
 
     },
     {
-        path: '/details',
+        path: '/details/:id',
+        name:'Details',
         component: Details
     },
     {
@@ -93,7 +111,12 @@ const routes = [
         path : '/register',
         name: 'Reg',
         component : Reg
-    }
+    },{
+        path: '/list',
+        component: List
+
+
+    },
 ];
 //创建一个VueRouter的实例
 let router = new VueRouter({
