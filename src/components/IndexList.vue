@@ -16,6 +16,7 @@
                   v-for="(item,idx) in wine"
                   :key="idx"
                   :id="item.ProductId"
+                  @click="toDetails(idx)"
                 >
                   <div class="pro_item">
                     <a href="#">
@@ -128,6 +129,12 @@ export default {
     changeStyle(){
       let sty = document.querySelector('.van-tabs__wrap')
       sty.position = "static"
+    },
+    toDetails(idx){
+      this.$router.push({
+        name:'Details',
+        params:{id:idx+1}
+      })
     }
   },
 
