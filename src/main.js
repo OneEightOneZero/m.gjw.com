@@ -8,6 +8,25 @@ Vue.prototype.$axios = axios;
 import Details from './pages/Details.vue'
 import Account from './pages/Account.vue'
 
+<<<<<<< HEAD
+
+//列表页
+import List from './pages/List.vue'
+//引进axios
+import axios from "axios"
+Vue.prototype.$axios=axios;
+//引进jq
+import $ from "jquery"
+Vue.prototype.$=$;
+//下拉刷新
+import { PullRefresh } from 'vant';
+
+Vue.use(PullRefresh)
+
+
+
+//引入Vant 为了不让他报错我改下下面的写法1564523
+=======
 //二级路由
 import Index from './pages/Index.vue'
 import Classify from './pages/Classify.vue'
@@ -15,6 +34,7 @@ import Mine from './pages/Mine.vue'
 import Cart from './pages/Cart.vue'
 
 //引入vant 为了不让他报错我改下下面的写法
+>>>>>>> 5e41820e0971783ac3f7a714d22675ba574a6ce7
 // import Vant from 'vant';
 import 'vant'
 import 'vant/lib/index.css';
@@ -39,6 +59,11 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 //注册路由
 const routes = [
+<<<<<<< HEAD
+    {path : '/',component:App},
+    {path : '/details',component:Details},
+	{path : '/list',component:List}
+=======
     {
         //域名重定向
         path: '/',
@@ -78,6 +103,7 @@ const routes = [
         path: '/Account',
         component: Account
     }
+>>>>>>> 5e41820e0971783ac3f7a714d22675ba574a6ce7
 ];
 //创建一个VueRouter的实例
 let router = new VueRouter({
