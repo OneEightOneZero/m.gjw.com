@@ -2,7 +2,7 @@
   <div>
     <!-- 搜索 -->
     <div class="van-nav-bar search-top" style="position: fixed;z-index: 88; top: 0px; width: 100%;">
-      <div class="back">
+      <div class="back" @click="toIndex">
         <i class="van-icon van-icon-arrow-left">
           <!---->
         </i>
@@ -121,6 +121,11 @@ export default {
     };
   },
   methods: {
+    tiIndex(){
+      this.$router.push({
+        name: "Index",
+      });
+    },
     getrouter(index) {
       // console.log(index)
       this.$router.push({
