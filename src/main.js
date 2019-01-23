@@ -99,6 +99,8 @@ const routes = [
     {
         path: '/list',
         component: List
+		
+		
     },
 ];
 //创建一个VueRouter的实例
