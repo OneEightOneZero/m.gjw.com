@@ -41,8 +41,8 @@
             <div class="good_item">
               <div class="tit">
                 <!--轮播图-->
-                <van-swipe :autoplay="3000">
-                  <van-swipe-item v-for="(l,index) in lunbo" :key="index">
+                <van-swipe :autoplay="3000" v-for="(item,idx) in detail" :key="idx">
+                  <van-swipe-item v-for="(l,index) in item.Pic_A" :key="index">
                     <a href="#">
                       <img class="vanImg" :src="l.imgUrl" alt>
                     </a>
@@ -537,7 +537,7 @@ export default {
   },
   methods: {
     goback() {
-      this.$router.back(-1);
+      this.$router.push({name:'list'});
     },
     changeVanTab(index) {
       this.vanTabId = index;
@@ -605,6 +605,7 @@ export default {
       }).then(res => {
         // console.log(res);
         this.detail = res.data.data;
+        
       });
       // console.log(this.detail[0].APPPrice);
     },
