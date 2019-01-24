@@ -1,13 +1,17 @@
 <template>
   <div>
-    <p>这里是购物车页面</p>
+    <LcartHearder></LcartHearder>
+    <LcartBody></LcartBody>
   </div>
 </template>
 <script>
+import LcartHearder from "../components/LcartHaeder.vue";
+import LcartBody from "../components/LcartBody.vue";
 
 export default {
-    components: {
-
+  components: {
+    LcartHearder,
+    LcartBody
   }
 };
 </script>
