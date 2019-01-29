@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div class="van-hairline--bottom van-nav-bar van-nav-bar--fixed" style="z-index: 1;" v-for="(item,idx) in detail" :key="idx">
+    <div
+      class="van-hairline--bottom van-nav-bar van-nav-bar--fixed"
+      style="z-index: 1;"
+      v-for="(item,idx) in detail"
+      :key="idx"
+    >
       <div class="van-nav-bar__left">
         <i class="van-icon van-icon-arrow van-nav-bar__arrow" @click="goback"></i>
       </div>
@@ -56,7 +61,8 @@
                       <i>￥</i>
                       <b v-text="item.APPPrice">188</b>
                     </p>
-                    <p>购酒秒杀：
+                    <p>
+                      购酒秒杀：
                       <s>￥298</s>
                     </p>
                   </div>
@@ -131,7 +137,8 @@
                   </div>
                   <div class="van-cell van-cell--clickable van-hairline" @click="show3 = true">
                     <!---->
-                    <div class="van-cell__title">送至
+                    <div class="van-cell__title">
+                      送至
                       <span v-text="addr"></span>
                       <p style="color: rgb(251, 34, 62);">有货</p>
                     </div>
@@ -142,7 +149,8 @@
                   </div>
                   <div class="van-cell van-hairline">
                     <!---->
-                    <div class="van-cell__title">提示
+                    <div class="van-cell__title">
+                      提示
                       <span v-text="item.BagExplain">每购买2瓶，即赠送原厂手提袋1个</span>
                       <p></p>
                     </div>
@@ -519,8 +527,8 @@ export default {
     }
   },
   computed: {
-    itemNum: function(){
-        return this.$store.state.qty
+    itemNum: function() {
+      return this.$store.state.qty;
     },
     second: function() {
       return this.num(this.seconds);
@@ -537,7 +545,7 @@ export default {
   },
   methods: {
     goback() {
-      this.$router.push({name:'list'});
+      this.$router.push({ name: "list" });
     },
     changeVanTab(index) {
       this.vanTabId = index;
@@ -585,13 +593,12 @@ export default {
     },
     // 数量框加减
     jia() {
-      this.$store.commit('qtyplus');
-      
+      this.$store.commit("qtyplus");
     },
     jian() {
-      this.$store.commit('qtyjian');
-      
+      this.$store.commit("qtyjian");
     },
+
     //拿商品数据
     async getdetail() {
       let ID = this.$route.params.id;
@@ -605,9 +612,8 @@ export default {
       }).then(res => {
         // console.log(res);
         this.detail = res.data.data;
-        
+        localStorage.setItem('data',JSON.stringify(res.data.data))
       });
-      // console.log(this.detail[0].APPPrice);
     },
 
     // 拿评价

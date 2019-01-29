@@ -4,18 +4,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-// 表
-const moduleA = {
-    state: {
-        skill: 'ps'
-    }
-}
 
-const moduleB = {
-    state: {
-        skill: 'js'
-    }
-}
 
 
 // 实例化Vuex，创建一个仓库
@@ -24,69 +13,27 @@ const store = new Vuex.Store({
     // 状态
     // 该库存数据的地方
     state: {
-        // 状态值
-        count: 0,
-        author: 'lemon',
-        modules: {
-            moduleA,
-            moduleB
-        },
-        // loading
-        loadingStatus: false,
-        // 预览图状态
-        // 图片的地址
-        galleryImgUrl: "",
-        // 预览图组件的状态值
-        galleryStatus: false,
-        // 新闻的ID
-        newsId: 0,
+        detailName:"",
+        detailImg:"",
+        detailPrice:"",
         qty:1
     },
     // 修改数据的方法 真正改数据的操作
     mutations: {
-        // 修改数据的第一个方法
-        editCount(state) {
-            state.count++
-        },
-        // 修改仓库中state中的author
-        editAuthor(state, data) {
-            state.author = data
-        },
-        editGallery(state, obj) {
-            state.galleryImgUrl = obj.galleryImgUrl
-            state.galleryStatus = obj.galleryStatus
-        },
-        editLoding(state, bool) {
-            state.loadingStatus = bool
-        },
-        editNewsId(state, id) {
-            state.newsId = id
-        },
+        
         qtyplus(state) {
             state.qty++
         },
         qtyjian(state) {
             state.qty--
+        },
+        qtydefalut(state){
+            state.qty = 1
         }
     },
     // 获取数据的方法
     getters: {
-        // 获取author的方法
-        getAuthor(state) {
-            return state.author + ' Yeah'
-        },
-        getCount(state) {
-            return state.count
-        },
-        getGallery(state) {
-            return {
-                galleryImgUrl: state.galleryImgUrl,
-                galleryStatus: state.galleryStatus
-            }
-        },
-        getLoding(state) {
-            return state.loadingStatus
-        },
+        
         getqty(state){
             return state.qty
         }
