@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import App from './App.vue'
-
 // 引入ajax库
 import axios from 'axios'
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -35,7 +34,7 @@ import Classify from './pages/Classify.vue'
 import Mine from './pages/Mine.vue'
 import Cart from './pages/Cart.vue'
 
-//引入vant 为了不让他报错我改下下面的写法
+//引入vant 为了不让他报错我改下下面的写法s
 // import Vant from 'vant';
 import 'vant'
 import 'vant/lib/index.css';
