@@ -19,7 +19,7 @@
                   @click="toDetails(idx)"
                 >
                   <div class="pro_item">
-                    <a href="#">
+                    <a href="javascript:;">
                       <img :src="'http://img0.gjw.com/product/'+item.Pic" alt class="pic">
                       <p class="tit2" v-text="item.ProductName"></p>
                       <div class="tag" v-if="item.activityTitle.length>0">

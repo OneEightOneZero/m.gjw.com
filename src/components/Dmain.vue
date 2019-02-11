@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <div
       class="van-hairline--bottom van-nav-bar van-nav-bar--fixed"
       style="z-index: 1;"
@@ -430,7 +430,7 @@
     <van-popup v-model="show3" position="bottom">
       <van-picker :columns="columns" show-toolbar @confirm="confirm" @cancel="cancel"/>
     </van-popup>
-  </div>
+  </main>
 </template>
 <script>
 import Vue from "vue";

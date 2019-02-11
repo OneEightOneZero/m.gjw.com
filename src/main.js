@@ -64,13 +64,14 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter);
 //注册路由
-const routes = [{
-        //域名重定向
-        path: '/',
-        redirect: {
-            name: 'Index'
-        }
-    },
+const routes = [
+    // {
+    //     //域名重定向
+    //     path: '/',
+    //     redirect: {
+    //         name: 'Index'
+    //     }
+    // },
     //定义一级路由
     {
         path: '/App',
@@ -112,7 +113,7 @@ const routes = [{
         name: 'Reg',
         component: Reg
     }, {
-        path: '/list/:searchText',
+        path: '/list/',
         name: 'list',
         component: List
 

@@ -1,5 +1,6 @@
 <template>
-    <div class="user mb50">
+    <div id="Mine">
+        <div class="user mb50">
         <div class="usr_top login ">
             <div class="no_login" v-show="!hasToken"><img src="../assets/icon_head_no_login.png" alt="">
                 <a href="javascript:void(0);" @click="toLogin">登录/注册
@@ -171,6 +172,7 @@
                     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
             </div>
         </div>
+    </div>
     </div>
 </template>
 <script>
